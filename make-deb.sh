@@ -7,7 +7,7 @@ _ARCH="all"
 PKG_NAME="${_PACKAGE}_${_VERSION}_${_ARCH}.deb"
 
 if [[ ! -e "scripts/launch.sh" ]]; then
-        echo "lauch.sh should be in the \`scripts\` Directory. Exiting..."
+        echo "lauch.sh \`scripts\` Dizininde olmalıdır. Çıkılıyor..."
         exit 1
 fi
 
@@ -27,13 +27,13 @@ mkdir -p build_env
 mkdir -p ./build_env/${_bin_dir} ./build_env/$_opt_dir ./build_env/DEBIAN 
 
 cat <<- CONTROL_EOF > ./build_env/DEBIAN/control
-Package: ${_PACKAGE}
-Version: ${_VERSION}
-Architecture: ${_ARCH}
-Maintainer: @htr-tech
-Depends: ${_depend}
-Homepage: https://github.com/htr-tech/zphisher
-Description: An automated phishing tool with 30+ templates. This Tool is made for educational purpose only !
+Paket: ${_PACKAGE}
+Sürüm: ${_VERSION}
+Mimari: ${_ARCH}
+Bakımcı: @Meyit47
+Bağlı olmak: ${_depend}
+kaynak kod: https://github.com/Meyit47/zphisher
+Açıklama: 30'dan fazla şablona sahip otomatik bir kimlik avı aracı. Bu Araç yalnızca eğitim amaçlı yapılmıştır !
 CONTROL_EOF
 
 cat <<- PRERM_EOF > ./build_env/DEBIAN/prerm
