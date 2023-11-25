@@ -4,7 +4,7 @@
 
 BASE_DIR=$(realpath "$(dirname "$BASH_SOURCE")")
 if [[ ! -d "$BASE_DIR/auth" ]]; then
-    echo "Creating Auth Directory.."
+    echo "Kimlik Doğrulama Dizini Oluşturma.."
 	mkdir -p "$BASE_DIR/auth"
 fi
 
@@ -15,7 +15,7 @@ MOUNT_LOCATION=${BASE_DIR}/auth
 check_container=$(docker ps --all --format "{{.Names}}")
 
 if [[ ! $check_container == $CONTAINER ]]; then
-	echo "Creating new container..."
+	echo "Yeni kapsayıcı oluşturma..."
 	docker create \
 		--interactive --tty \
 		--volume ${MOUNT_LOCATION}:/zphisher/auth/ \
