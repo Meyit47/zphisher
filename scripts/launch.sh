@@ -9,21 +9,21 @@ else
 fi
 
 if [[ $1 == '-h' || $1 == 'help' ]]; then
-	echo "To run Zphisher type \`zphisher\` in your cmd"
+	echo "Zphisher'ı çalıştırmak için termux'a  \`zphisher\` yazın"
 	echo
-	echo "Help:"
-	echo " -h | help : Print this menu & Exit"
-	echo " -c | auth : View Saved Credentials"
-	echo " -i | ip   : View Saved Victim IP"
+	echo "Yardım:"
+	echo " -h | help : Bu menüyü yazdır & Exit"
+	echo " -c | auth : Kaydedilen Kimlik Bilgilerini Görüntüle"
+	echo " -i | ip   : Kaydedilen Mağdurun IP'sini Görüntüle"
 	echo
 elif [[ $1 == '-c' || $1 == 'auth' ]]; then
 	cat $ZPHISHER_ROOT/auth/usernames.dat 2> /dev/null || { 
-		echo "No Credentials Found !"
+		echo "Kimlik Bilgisi Bulunamadı !"
 		exit 1
 	}
 elif [[ $1 == '-i' || $1 == 'ip' ]]; then
 	cat $ZPHISHER_ROOT/auth/ip.txt 2> /dev/null || {
-		echo "No Saved IP Found !"
+		echo "Kayıtlı IP Bulunamadı !"
 		exit 1
 	}
 else
